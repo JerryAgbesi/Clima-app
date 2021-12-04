@@ -27,7 +27,16 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   Future<void> updateUI(dynamic weatherData) async {
-    setState(() {
+     setState(()  {
+
+        if (weatherData == null) {
+        temperature = 0;
+        weatherIcon = 'Error';
+        message = 'Unable to get weather data';
+        city = '';
+        return;
+      }
+
       double temp =  weatherData['list'][0]['main']['temp'];
       temperature = temp.toInt();
 
@@ -62,7 +71,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 children: <Widget>[
                   TextButton(
                     onPressed: () async {
-                      var weatherData = weatherM.getLocationWeather();
+                      var weatherData =  await weatherM.getLocationWeather();
                       updateUI(weatherData);
                     },
                     child: const Icon(
@@ -77,7 +86,7 @@ class _LocationScreenState extends State<LocationScreen> {
                         return CityScreen();
                       }));
                       if (typedName != null) {
-                        var weatherData = weatherM.getCityWeather(typedName);
+                        var weatherData = await weatherM.getCityWeather(typedName);
                         updateUI(weatherData);
                       }
                     },
