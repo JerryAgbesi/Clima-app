@@ -37,14 +37,15 @@ class _LocationScreenState extends State<LocationScreen> {
         return;
       }
 
-      double temp =  weatherData['list'][0]['main']['temp'];
+      double temp =  weatherData['main']['temp'];
+
       temperature = temp.toInt();
 
       message = weatherM.getMessage(temperature);
 
-      var weatherId = weatherData['list'][0]['weather'][0]['id'];
+      var weatherId = weatherData['weather'][0]['id'];
       weatherIcon = weatherM.getWeatherIcon(weatherId);
-      city = weatherData['city']['name'];
+      city = weatherData['name'];
     });
   }
 
