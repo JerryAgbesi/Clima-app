@@ -11,7 +11,7 @@
 // class WeatherModel {
 //   Future<dynamic> getCityWeather(String cityName) async {
 //     NetworkHelper networkHelper = NetworkHelper(
-//         '$openWeatherMapUrl?q=$cityName&appid=0871b3e613051a6890e7804e53db276e&units=metric');
+//         '$openWeatherMapUrl?q=$cityName&appid=&units=metric');
 //     var weatherData = await networkHelper.getData();
 
 //     return weatherData;
