@@ -17,7 +17,7 @@ class ClimaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       
-      home:LoadingScreen(),
+      home:LocationScreen(),
     );
   }
 }

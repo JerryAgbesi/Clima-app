@@ -31,9 +31,9 @@ class _LocationScreenState extends State<LocationScreen> {
 
         if (weatherData == null) {
         temperature = 0;
-        weatherIcon = 'Error';
-        message = 'Unable to get weather data';
-        city = '';
+        weatherIcon = '☃️';
+        message = 'You\'ll need 🧣 and 🧤';
+        city = 'London';
         return;
       }
 
